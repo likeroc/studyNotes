@@ -23,7 +23,18 @@
 
   <link type="text/css" rel="stylesheet" href="../css/shCoreEclipse.css"/>
   <script type="text/javascript">SyntaxHighlighter.all();</script>
+  <style> 
 
+  .affix{
+    top:40px;
+  }
+  </style>
+  <script>
+    $(document).ready(function(){
+      alert(222);
+    });
+    
+  </script>
 </head>
 <body>
   <header role="banner" id="top" class="navbar navbar-static-top bs-docs-nav">
@@ -746,20 +757,21 @@
             </ul>
            
       </div>
-        <!------------------------> </div>
+        <!------------------------> 
+      </div>
       <div class="col-md-3">
-        <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
+        <nav data-spy="affix" data-offset-top="330"  class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
           <ul class="nav bs-docs-sidenav">
             <li class="active">
               <a href="#overview">概览</a>
               <ul class="nav">
-                <li class="">
+                <li>
                   <a href="#ov1">Java语言概述(了解)</a>
                 </li>
-                <li class="">
+                <li>
                   <a href="#ov2">JDK,JRE,JVM的作用及关系(掌握) </a>
                 </li>
-                <li class="active">
+                <li>
                   <a href="#ov3">JDK的下载,安装,卸载(掌握) </a>
                 </li>
                 <li>
@@ -779,7 +791,7 @@
                 </li>
               </ul>
             </li>
-            <li class="active">
+            <li>
               <a href="#grid">Day02</a>
               <ul class="nav">
                 <li>
@@ -814,10 +826,10 @@
     </div>
   </div>
 
-  <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
-  <script src="../js/jquery.min.js"></script>
-  <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
-  <script src="../js/bootstrap.min.js"></script> 
+
+
+  <script src="../js/jquery.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
 
 </body>
 </html>
