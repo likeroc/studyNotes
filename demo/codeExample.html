@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Code Example</title>
+
+    <script type="text/javascript" src="../js/shCore.js"></script>
+    <script type="text/javascript" src="../js/shBrushJava.js"></script>
+    <!-- <link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreDefault.css"/> -->
+    <!-- <link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shThemeDefault
+    .css"/> -->
+    <link type="text/css" rel="stylesheet" href="../css/shThemeEclipse.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/shCoreEclipse.css"/>
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+      <div class="Class col-md-6" >
+        <label>Direction1.java</label>
+        <pre class="brush: java;">
+          package cn.itcast_01;
+          /*
+           * 最简单的枚举，也是用的最多的
+           */
+          public enum Direction1 {
+            FONT, BEHIND, LEFT, RIGHT;
+          }
+        </pre>
+      </div>  
+
+      <div class="Class col-md-6" >
+        <label>Direction2.java</label>
+        <pre class="brush: java;">
+          package cn.itcast_01;
+
+          public enum Direction2 {
+
+            FONT("前"), BEHIND("后"), LEFT("左"), RIGHT("右");
+            
+            private String str;
+
+            private Direction2(String str) {
+              this.str = str;
+            }
+            
+            public String getStr(){
+              return str;
+            }
+            
+          }
+        </pre>
+      </div>
+
+      <div class="Class col-md-6" style="height: 300px;">
+        <label>Direction3.java</label>
+        <pre class="brush: java;">
+          package cn.itcast_01;
+
+          public enum Direction3 {
+
+            FONT("前"){
+              @Override
+              public void show() {
+                
+                System.out.println("qian");
+              }
+            }, 
+            BEHIND("后"){
+              @Override
+              public void show() {
+                
+                System.out.println("hou");
+              }
+            }, 
+            LEFT("左"){
+              @Override
+              public void show() {
+                
+                System.out.println("zuo");
+              }
+            }, 
+            RIGHT("右"){
+              @Override
+              public void show() {
+                
+                System.out.println("you");
+              }
+            };
+            
+            private String str;
+
+            private Direction3(String str) {
+              this.str = str;
+            }
+            
+            public String getStr(){
+              return str;
+            }
+            
+            public abstract void show();
+            
+          }
+
+        </pre>  
+      </div>
+
+      <div class="Class col-md-6" >
+        <label>DirectionTest.java</label>
+        <pre class="brush: java;">
+          package cn.itcast_01;
+
+          import javax.naming.directory.DirContext;
+
+          public class DirectionTest {
+
+            public static void main(String[] args) {
+              Direction1 d1 = Direction1.FONT;
+              System.out.println(d1);
+              System.out.println("------");
+              
+              Direction2 d2 = Direction2.FONT;
+              System.out.println(d2);
+              System.out.println(d2.getStr());
+              System.out.println("------");
+              
+              Direction3 d3 = Direction3.FONT;
+              System.out.println(d3);
+              System.out.println(d3.getStr());
+              d3.show();
+            }
+          }
+
+        </pre>
+      </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  </body>
+</html>

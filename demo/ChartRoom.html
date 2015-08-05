@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>聊天室</title>   
+        <!-- Bootstrap -->
+        <link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!--你自己的样式文件 -->
+        <link href="css/your-style.css" rel="stylesheet">        
+        <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style type="text/css">
+        .chart{width: 500px;}
+        .chart-content{
+          width: 500px;
+          height: 300px;
+        }
+        .send{
+          margin-top: 10px;
+        }
+        .visitor{
+          color: #d44950;
+        }
+        .im{
+          color: #0A8;
+        }
+        .username{
+          margin-right: 10px;
+        }
+        .input-context{
+          color: #0A8;
+        }
+        .chart .panel{
+          overflow-y: scroll;
+          overflow-x: hidden;
+          margin-bottom: 0;
+        }
+        .mt40{margin-top: 40px;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+          <form class="form-horizontal mt40">
+            <div class="form-group center-block">
+              <label for="inputEmail3" class="col-sm-offset-3 col-sm-1 control-label">对方IP ：</label>
+              <div class="col-sm-3">
+                <input type="txt" class="form-control" id="inputEmail3" placeholder="例如：192.168.0.1">
+              </div>
+              <div class="col-sm-2">
+                <button type="submit" class="btn btn-success">确认</button>
+              </div>
+            </div>
+          </form>
+          
+          <div class="chart center-block">
+            <div class="chart-content panel panel-default">
+              <div class="panel-body">
+                <div class="visitor">
+                  <h5>
+                    <span class="username">198.168.0.1</span>
+                    <span class="cahrt-time">2015/6/19 22:38:28</span> 
+                  </h5>
+                  <p>好好学习，天天向上</p>
+                </div>
+                <div class="im">
+                  <h5>
+                    <span class="username">我</span>
+                    <span class="cahrt-time">2015/6/19 22:39:03</span>
+                  </h5>
+                  <p>好好学习</p>
+                </div>
+                <!-- ------------------------- -->
+                <div class="im">
+                  <h5>
+                    <span class="username">我</span>
+                    <span class="cahrt-time">2015/6/19 22:39:03</span>
+                  </h5>
+                  <p>好好学习</p>
+                </div>
+                <div class="visitor">
+                  <h5>
+                    <span class="username">198.168.0.1</span>
+                    <span class="cahrt-time">2015/6/19 22:38:28</span> 
+                  </h5>
+                  <p>好好学习，天天向上</p>
+                </div>
+                <div class="im">
+                  <h5>
+                    <span class="username">我</span>
+                    <span class="cahrt-time">2015/6/19 22:39:03</span>
+                  </h5>
+                  <p>好好学习</p>
+                </div>
+                <div class="visitor">
+                  <h5>
+                    <span class="username">198.168.0.1</span>
+                    <span class="cahrt-time">2015/6/19 22:38:28</span> 
+                  </h5>
+                  <p>好好学习，天天向上</p>
+                </div>
+                <div class="im">
+                  <h5>
+                    <span class="username">我</span>
+                    <span class="cahrt-time">2015/6/19 22:39:03</span>
+                  </h5>
+                  <p>好好学习</p>
+                </div>
+                <!-- ------------------------- -->
+              </div>
+            </div>
+
+            <form class="form-horizontal">
+              <textarea class="form-control input-context" rows="3"></textarea>
+              <div class="form-group">
+                <div class="send col-sm-offset-10 col-sm-2">
+                  <button type="submit" class="btn btn-success">发送</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+
+
+        </div>
+
+        
+        <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+        <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+        <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+    </body>
+</html>
+

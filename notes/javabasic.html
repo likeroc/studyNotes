@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Java基础</title>
+  <!-- Bootstrap -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+  <!--你自己的样式文件 -->
+  <link href="../css/style.css" rel="stylesheet">
+  <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!--syntaxhighlighter 代码高亮-->
+  <script type="text/javascript" src="../js/shCore.js"></script>
+  <script type="text/javascript" src="../js/shBrushJava.js"></script>
+  <link type="text/css" rel="stylesheet" href="../css/shThemeEclipse.css"/>
+
+  <link type="text/css" rel="stylesheet" href="../css/shCoreEclipse.css"/>
+  <script type="text/javascript">SyntaxHighlighter.all();</script>
+
+</head>
+<body>
+  <header role="banner" id="top" class="navbar navbar-static-top bs-docs-nav">
+    <div class="container">
+      <div class="navbar-header">
+        <button data-target=".bs-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle collapsed">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">LIKEROC</a>
+      </div>
+
+      <nav class="collapse navbar-collapse bs-navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            <a onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3导航-起步'])" href="###">起步</a>
+          </li>
+          <li class="active">
+            <a onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3导航-全局CSS样式'])" href="###">java 基础</a>
+          </li>
+          <li>
+            <a onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3导航-组件'])" href="###">JSP</a>
+          </li>
+          <li>
+            <a onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3导航-JavaScript插件'])" href="###">Struts 2.1</a>
+          </li>
+          <li>
+            <a onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3导航-定制'])" href="###">Spring</a>
+          </li>
+          <li>
+            <a onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3导航-定制'])" href="###">Linux</a>
+          </li>
+          <li>
+            <a onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3导航-定制'])" href="###">Git</a>
+          </li>
+          <li>
+            <a target="_blank" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3导航-网站实例'])" href="###">网站实例</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a target="_blank" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3导航-Bootstrap中文网'])" href="###">likeroc自习网</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div tabindex="-1" id="content" class="bs-docs-header">
+    <div class="container">
+      <h1>Java 基础</h1>
+      <p>好好学习，天天向上</p>
+    </div>
+  </div>
+
+  <div class="bs-docs-container container">
+    <div class="row">
+      <div class="col-md-9">
+        <!------------------------>
+        <div class="bs-docs-section">
+          <h1 class="page-header" id="overview">
+            概览
+            <a href="#overview" class="anchorjs-link">
+              <span class="anchorjs-icon"></span>
+            </a>
+          </h1>
+
+          <p class="lead">本篇学习笔记抄录自传智播客的刘易老师（风清扬），想更好的学习，<a target="_blank"  href="http://www.itcast.cn/">找传智播客</a>，<a target="_blank" href="http://java.itcast.cn/news/20140312/1045075878.shtml">找风清扬</a></p>
+
+          <h2 id="ov1">
+            Java语言概述(了解)
+            <a href="ov1" class="anchorjs-link">
+              <span class="anchorjs-icon"></span>
+            </a>
+          </h2>
+          <p>
+            Java语言的特点: 有很多小特点，重点有两个开源，跨平台 
+          </p>
+          <p>
+            Java语言是跨平台的，请问是如何保证的呢?(理解)
+          </p>
+          <ul>
+            <li>我们是通过翻译的案例讲解的。</li>
+            <li>针对不同的操作系统，提高不同的jvm来实现的。</li>
+          </ul>
+          <p>
+            Java语言的平台: 
+          </p>
+          <ul>
+            <li>JavaSE</li>
+            <li>JavaME--Android</li>
+            <li>JavaEE</li>
+          </ul>
+                
+                
+          
+          <!-- <div class="zero-clipboard">
+            <span class="btn-clipboard">复制</span>
+          </div>
+          <div class="highlight">
+            Java代码高亮
+            <pre class="brush: java;">
+                      package cn.itcast_01;
+                      /*
+                       * 最简单的枚举，也是用的最多的
+                       */
+                      public enum Direction1 {
+                        FONT, BEHIND, LEFT, RIGHT;
+                      }
+            </pre>
+          </div> -->
+
+          <h2 id="ov2">
+            JDK,JRE,JVM的作用及关系(掌握)
+            <a href="#ov2" class="anchorjs-link">
+              <span class="anchorjs-icon"></span>
+            </a>
+          </h2>
+          <p>
+            <strong>作用</strong>
+          </p>
+          <ul>
+            <li>JVM：保证Java语言跨平台</li>
+            <li>JRE：Java程序的运行环境</li>
+            <li>JDK：Java程序的开发环境</li>
+          </ul>
+          <p>
+          关系
+          </p>
+          <ul>
+            <li>JDK：JRE+工具</li>
+            <li>JRE：JVM+类库</li>
+          </ul>
+          <!-- <div class="zero-clipboard">
+            <span class="btn-clipboard">复制</span>
+          </div>
+          <div class="highlight">  代码高亮
+            <pre class="brush: java;">
+              package cn.itcast_01;
+               
+              import javax.naming.directory.DirContext;
+               
+              public class DirectionTest {
+               
+                public static void main(String[] args) {
+                  Direction1 d1 = Direction1.FONT;
+                  System.out.println(d1);
+                  System.out.println("------");
+                   
+                  Direction2 d2 = Direction2.FONT;
+                  System.out.println(d2);
+                  System.out.println(d2.getStr());
+                  System.out.println("------");
+                   
+                  Direction3 d3 = Direction3.FONT;
+                  System.out.println(d3);
+                  System.out.println(d3.getStr());
+                  d3.show();
+                }
+              }
+            </pre>
+          </div> -->
+          
+
+          <h2 id="ov3">
+            JDK的下载,安装,卸载(掌握)
+            <a href="#ov3" class="anchorjs-link">
+              <span class="anchorjs-icon"></span>
+            </a>
+          </h2>
+          <p>
+            下载到<a href=""></a>官网。
+          </p>
+          <ul>
+            <li>A:也可以到百度搜索即可。</li>
+            <li><a href="###download">B:我给你。</a></li>
+          </ul>
+          <p>注意：</p>
+          <ul>
+            <li>建议所有跟开发相关的软件都不要安装在有中文或者空格的目录下。</li>
+          </ul>
+
+          <h2 id="ov4">
+            卸载
+            <a href="#ov4" class="anchorjs-link">
+              <span class="anchorjs-icon"></span>
+            </a>
+          </h2>
+          <p>
+            A:绿色版 直接删除文件夹
+          </p>
+          <p>
+            B:安装版
+          </p>
+          <ul>
+            <li>a:控制面板 -- 添加删除程序</li>
+            <li>b:通过专业的软件卸载工具。(比如360的软件管家卸载)</li>
+          </ul>
+
+          <h2 id="ov5">
+            第一个程序：HelloWorld案例(掌握)
+            <a href="#ov5" class="anchorjs-link">
+              <span class="anchorjs-icon"></span>
+            </a>
+          </h2>
+          <div class="zero-clipboard">
+            <span class="btn-clipboard">复制</span>
+          </div>
+          <div class="highlight">
+            <pre class="brush: java;">
+              class HelloWorld {
+                  public static void main(String[] args) {
+                    System.out.println("HelloWorld");
+                  }
+                }
+            </pre>
+          </div>
+          <p>
+            程序解释：
+          </p>
+          
+          <ul>
+            <li>A:Java程序的最基本单位是类，所以我们要定义一个类。
+              <ul>
+                <ol>格式：<code>class</code> 类名</ol>
+                <ol>举例：<code>class</code> <code>HelloWorld</code></ol>
+              </ul>
+            </li>
+            <li>B:在类中写内容的时候，用大括号括起来。</li>
+            <li>C:Java程序要想执行，必须有<code> main</code>方法。
+              <ul>
+                <ol>格式：<code>public</code> <code> static</code> <code>void</code> <code> main(String[] args)</code></ol>
+              </ul>
+            </li>
+            <li>D:要指向那些东西呢，也用大括号括起来。</li>
+            <li>E:你要做什么呢?今天我们仅仅做了一个简单的输出
+              <ul>
+                <ol>格式：System.out.println("HelloWorld");</ol>
+                <ol>注意：""里面的内容是可以改动的。</ol>
+              </ul>
+
+            </li>
+          </ul>
+          <p>
+            Java程序的开发执行流程：
+          </p>
+          <ul>
+            <li>A:编写<code>java</code>源程序(.java)</li>
+            <li>B:通过<code>javac</code>命令编译生成<code>.class</code>文件</li>
+            <li>C:通过<code>java</code>命令运行<code>.class</code>文件</li>
+          </ul>
+          <h2 id="ov6">
+            常见的问题(掌握)
+            <a href="#0v6" class="anchorjs-link">
+              <span class="anchorjs-icon"></span>
+            </a>
+          </h2>
+          <p>(1)扩展名被隐藏</p>
+          <ul>
+            <li>如何找到：工具--文件夹选项--查看--去除隐藏扩展名的那个勾勾</li>
+          </ul>
+          <p>(2)我要求文件名称和类名一致。</p>
+          <ul>
+            <li>实际上不这样做也是可以的。</li>
+            <li>
+              但是，注意：
+              <ul>
+                <ol>javac后面跟的是文件名+扩展名</ol>
+                <ol>java后面跟的类名不带扩展名</ol>
+              </ul>
+
+            </li>
+          </ul>
+          <p>(3)Java语言严格区分大小写，请注意。</p>
+          <ul>
+            <li>还有就是单词不要写错了。</li>
+          </ul>
+          <p>(4)见到非法字符: \65307肯定是中文问题。</p>
+          <ul>
+            <li>我们写程序要求标点符号必须全部是英文状态。</li>
+          </ul>
+          <p>(5)括号的配对问题。</p>
+          <ul>
+            <li>一般来说，括号都是成对出现的。</li>
+          </ul>
+          <p>(6)遇到</p>
+          <ul>
+            <li>在类 HelloWorld 中找不到主方法, 请将主方法定义为肯定是主方法的格式问题。</li>
+          </ul>
+
+          <h2 id="ov7">
+            path环境变量(掌握)
+            <a href="#ov7" class="anchorjs-link">
+              <span class="anchorjs-icon"></span>
+            </a>
+          </h2>
+          <p>(1)path环境变量的作用</p>
+            <ul>
+              <li>保证javac命令可以在任意目录下运行。</li>
+              <li>同理可以配置qq等</li>
+            </ul>
+              
+              
+          <p>(2)path配置的两种方案：</p>
+            <ul>
+              <li>A:方案1(了解)</li>
+              <li>B:方案2
+                <ul>
+                  <ol>找到环境变量的位置，在系统变量里面</ol>
+                  <ol>新建：
+                    <ul>
+                      <ol>变量名：JAVA_HOME</ol>
+                      <ol>变量值：D:\develop\Java\jdk1.7.0_60</ol>
+                    </ul>
+                  </ol>
+                  <ol>修改：
+                    <ul>
+                      <ol>变量名：Path</ol>
+                      <ol>变量值：%JAVA_HOME%\bin;以前的内容</ol>
+                    </ul>
+                  </ol>
+                </ul>
+              </li>
+            </ul>
+
+          <h2 id="ov8">
+            classpath环境变量(理解)
+            <a href="#ov8" class="anchorjs-link">
+              <span class="anchorjs-icon"></span>
+            </a>
+          </h2>
+          <p>(1)classpath环境变量的作用</p>
+            <ul>
+              <li>保证class文件可以在任意目录下运行</li>
+            </ul>
+          <p>(2)classpath环境变量的配置</p>
+            <ul>
+              <li>找到环境变量的位置，在系统变量里面</li>
+              <li>新建：
+                <ul>
+                  <ol>变量名：classpath</ol>
+                  <ol>变量值：E:\JavaSE\day01\code\HelloWorld案例</ol>
+                </ul>
+              </li>
+            </ul>
+            
+                
+        </div>
+
+        <div class="bs-docs-section">
+          <h1 id="grid" class="page-header">
+            <a class="anchorjs-link " data-anchorjs-icon="" aria-label="Anchor link for: grid" href="#grid" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>
+          Day02
+          </h1>
+
+          
+
+          
+          
+
+          <h2 id="gr1">
+            关键字(掌握)
+            <a href="#grid-options" class="anchorjs-link">
+              <span class="anchorjs-icon"></span>
+            </a>
+          </h2>
+          <p>(1)被Java语言赋予特定含义的单词</p>
+          <p>(2)特点：</p>
+            <ul>
+              <li>全部小写。</li>
+            </ul>
+          <p>(3)注意事项：</p>
+            <ul>
+              <li>A:goto和const作为保留字存在。</li>
+              <li>B:类似于Notepad++这样的高级记事本会对关键字有特殊颜色标记</li>
+            </ul>
+              
+          
+          <h2 id="gr2">
+            标识符(掌握)
+            <a href="#grid-example-basic" class="anchorjs-link">
+              <span class="anchorjs-icon"></span>
+            </a>
+          </h2>
+          <p>(1)就是给类，接口，方法，变量等起名字的字符序列</p>
+          <p>(2)组成规则：</p>
+            <ul>
+              <li>A:英文大小写字母</li>
+              <li>B:数字</li>
+              <li>C:$和_</li>
+            </ul>
+              
+          <p>(3)注意事项：</p>
+            <ul>
+              <li>A:不能以数字开头</li>
+              <li>B:不能是java中的关键字</li>
+              <li>C:区分大小写</li>
+            </ul>
+          <p>(4)常见的命名规则(见名知意)</p>
+          <ul>
+            <li>A:包 全部小写
+              <ul>
+                <li>单级包：小写
+                  <ul>
+                    <li>举例：liuyi,com</li>
+                  </ul>
+                </li>
+                <li>多级包：小写，并用.隔开
+                  <ul>
+                    <li>举例：cn.itcast,com.baidu  </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>B:类或者接口
+              <ul>
+                <li>一个单词：首字母大写
+                  <ul>
+                    <li>举例：Student,Demo</li>
+                  </ul>
+                </li>
+                <li>多个单词：每个单词首字母大写
+                  <ul>
+                    <li>举例：HelloWorld,StudentName</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>C:方法或者变量
+              <ul>
+                <il>一个单词：首字母小写
+                  <ul>
+                    <li>举例：name,main</li>
+                  </ul>
+                </il>
+                <il>多个单词：从第二个单词开始，每个单词首字母大写
+                  <ul>
+                    <li>举例：studentAge,showAllNames()</li>
+                  </ul>
+                </il>
+              </ul>
+            </li>
+            <li>D:常量
+              <ul>
+                <li>全部大写</li>
+                <li>一个单词：大写
+                  <ul>
+                    <li>举例：PI</li>
+                  </ul>
+                </li>
+                <li>多个单词：大写，并用_隔开
+                  <ul>
+                    <li>举例：STUDENT_MAX_AGE</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          
+                  
+              
+                
+                
+                  
+                
+                  
+
+          
+
+          <h2 id="gr3">
+            注释(掌握)
+            <a href="#grid-example-fluid" class="anchorjs-link">
+              <span class="anchorjs-icon"></span>
+            </a>
+          </h2>
+          <p>(1)就是对程序进行解释说明的文字</p>
+          <p>(2)分类：</p>
+            <ul>
+              <li>A:单行注释  //</li>
+              <li>B:多行注释  /**/</li>
+              <li>C:文档注释(后面讲) /** */</li>
+              <li></li>
+            </ul>
+          <p>(3)把HelloWorld案例写了一个带注释的版本。</p>
+            <ul>
+              <li>后面我们要写一个程序的过程。</li>
+              <li>需求：</li>
+              <li>分析：</li>
+              <li>实现：</li>
+              <li>代码体现：</li>
+            </ul>
+              
+              
+              
+              
+              
+          <p>(4)注释的作用</p>
+            <ul>
+              <li>A:解释说明程序，提高了代码的阅读性。</li>
+              <li>B:可以帮助我们调试程序。
+                <ul>
+                  <li>后面我们会讲解一个更高端的一个调试工具</li>
+                </ul>
+              </li>
+            </ul>
+              
+              
+                
+          
+          
+
+          <h2 id="gr4">
+            常量(掌握)
+            <a href="#grid-example-mixed" class="anchorjs-link">
+              <span class="anchorjs-icon"></span>
+            </a>
+          </h2>
+          <p>(1)在程序执行的过程中，其值不发生改变的量</p>
+          <p>(2)分类：</p>
+            <ul>
+              <li>A:字面值常量</li>
+              <li>B:自定义常量(后面讲)</li>
+            </ul>
+              
+              
+          <p>(3)字面值常量</p>
+            <ul>
+              <li>A:字符串常量 "hello"</li>
+              <li>B:整数常量  12,23</li>
+              <li>C:小数常量  12.345</li>
+              <li>D:字符常量  'a','A','0'</li>
+              <li>E:布尔常量  true,false</li>
+              <li>F:空常量 null(后面讲)</li>
+            </ul>
+              
+          <p>(4)在Java中针对整数常量提供了四种表现形式</p>
+            <ul>
+              <li>A:二进制 由0，1组成。以0b开头。</li>
+              <li>B:八进制 由0，1，...7组成。以0开头。</li>
+              <li>C:十进制 由0，1，...9组成。整数默认是十进制。</li>
+              <li>D:十六进制  由0，1，...9,a,b,c,d,e,f(大小写均可)组成。以0x开头。</li>
+            </ul>
+
+          <h2 id="gr5">
+            进制转换(了解)
+            <a href="#grid-example-mixed-complete" class="anchorjs-link">
+              <span class="anchorjs-icon"></span>
+            </a>
+          </h2>
+          <p>(1)其他进制到十进制</p>
+            <ul>
+              <li>系数：就是每一个位上的数值</li>
+              <li>基数：x进制的基数就是x</li>
+              <li>权：对每一个位上的数据，从右，并且从0开始编号，对应的编号就是该数据的权。</li>
+              <li>结果：系数*基数^权次幂之和。</li>
+            </ul>
+          <p>(2)十进制到其他进制</p>
+              <ul>
+                <li>除基取余，直到商为0，余数反转。</li>
+              </ul>
+          <p>(3)进制转换的快速转换法</p>
+            <ul>
+              <li>A:十进制和二进制间的转换
+                <ul>
+                  <li>8421码。</li>
+                </ul>
+              </li>
+              <li>B:二进制到八进制，十六进制的转换</li>
+            </ul>
+              
+                
+              
+          
+          
+          
+
+          <h2 id="gr6">
+            变量(掌握)
+            <a href="#grid-example-wrapping" class="anchorjs-link">
+              <span class="anchorjs-icon"></span>
+            </a>
+          </h2>
+          <p>(1)在程序的执行过程中，其值在某个范围内可以发生改变的量</p>
+          <p>(2)变量的定义格式：</p>
+            <ul>
+              <li>A:数据类型 变量名 = 初始化值;</li>
+              <li>B:数据类型 变量名;
+                <ul>
+                  <li>变量名 = 初始化值;</li>
+                </ul>
+              </li>
+            </ul>
+              
+          <h2 id="gr7">
+            数据类型(掌握)
+            <a href="#grid-responsive-resets" class="anchorjs-link">
+              <span class="anchorjs-icon"></span>
+            </a>
+          </h2>
+          <p>(1)Java是一种强类型语言，针对每种数据都提供了对应的数据类型。</p>
+          <p>(2)分类：</p>
+            <ul>
+              <li>A:基本数据类型：4类8种</li>
+              <li>B:引用数据类型：类，接口，数组。</li>
+            </ul>
+              
+              
+          <p>(3)基本数据类型</p>
+          <ul>
+            <li>A:整数      占用字节数
+              <pre  class="brush: java;">
+                byte      1
+                short     2
+                int       4
+                long      8
+              </pre>
+            </li>
+            <li>B:浮点数
+              <pre  class="brush: java;">
+                float     4
+                double      8
+              </pre>
+            </li>
+            <li>C:字符
+              <pre  class="brush: java;">
+                char      2
+              </pre>
+            </li>
+            <li>D:布尔
+              <pre  class="brush: java;">
+                boolean     1
+              </pre>
+            </li>
+            <li>注意：
+              <ul>
+                <li>整数默认是int类型，浮点数默认是double。</li>
+                <li>长整数要加L或者l。</li>
+                <li>单精度的浮点数要加F或者f。</li>
+              </ul>
+            </li>
+          </ul>
+              
+          
+
+          <h2 id="gr8">
+            数据类型转换(掌握)
+            <a href="#grid-offsetting" class="anchorjs-link">
+              <span class="anchorjs-icon"></span>
+            </a>
+          </h2>
+
+          <p>(1)boolean类型不参与转换</p>
+          <p>(2)默认转换</p>
+            <ul>
+              <li>A:从小到大</li>
+              <li>B:byte,short,char -- int -- long -- float -- double</li>
+              <li>C:byte,short,char之间不相互转换，直接转成int类型参与运算。</li>
+            </ul>
+              
+              
+              
+          <p>(3)强制转换</p>
+            <ul>
+              <li>A:从大到小</li>
+              <li>B:可能会有精度的损失，一般不建议这样使用。</li>
+              <li>C:格式：
+                <ul>
+                  <li>目标数据类型 变量名 = (目标数据类型) (被转换的数据);</li>
+                </ul>
+              </li>
+            </ul>
+              
+              
+              
+                
+          <p>(4)思考题和面试题：</p>
+            <ul>
+              <li>A:下面两种方式有区别吗?</li>
+                <pre class="brush: java;">
+                  float f1 = 12.345f;
+                  float f2 = (float)12.345;
+                </pre>
+                  
+              <li>B:下面的程序有问题吗，如果有，在哪里呢?</li>
+                  <pre class="brush: java;">
+                    byte b1 = 3;
+                    byte b2 = 4;
+                    byte b3 = b1 + b2;
+                    byte b4 = 3 + 4;
+                  </pre>
+              <li>C:下面的操作结果是什么呢?</li>
+                  <pre  class="brush: java;">
+                    byte b = (byte)130;
+                  </pre>
+              <li>D:字符参与运算</li>
+                  <ul>
+                    <li>是查找ASCII里面的值</li>
+                  </ul>
+                  <pre class="brush: java;">
+                    'a'   97
+                    'A'   65
+                    '0'   48
+                    System.out.println('a');
+                    System.out.println('a' + 1);
+                  </pre>
+                  
+                  
+              <li>E:字符串参与运算</li>
+                  <ul>
+                    <li>这里其实是字符串的连接</li>
+                  </ul>
+                  
+                  <pre class="brush: java;">
+                    System.out.println("hello"+'a'+1);
+                    System.out.println('a'+1+"hello");
+                    System.out.println("5+5="+5+5);
+                    System.out.println(5+5+"=5+5");
+                  </pre>
+            </ul>
+           
+      </div>
+        <!------------------------> </div>
+      <div class="col-md-3">
+        <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
+          <ul class="nav bs-docs-sidenav">
+            <li class="active">
+              <a href="#overview">概览</a>
+              <ul class="nav">
+                <li class="">
+                  <a href="#ov1">Java语言概述(了解)</a>
+                </li>
+                <li class="">
+                  <a href="#ov2">JDK,JRE,JVM的作用及关系(掌握) </a>
+                </li>
+                <li class="active">
+                  <a href="#ov3">JDK的下载,安装,卸载(掌握) </a>
+                </li>
+                <li>
+                  <a href="#ov4">卸载</a>
+                </li>
+                <li>
+                  <a href="#ov5">第一个程序：HelloWorld案例(掌握) </a>
+                </li>
+                <li>
+                  <a href="#ov6">常见的问题(掌握) </a>
+                </li>
+                <li>
+                  <a href="#ov7">path环境变量(掌握) </a>
+                </li>
+                <li>
+                  <a href="#ov8">classpath环境变量(理解) </a>
+                </li>
+              </ul>
+            </li>
+            <li class="active">
+              <a href="#grid">Day02</a>
+              <ul class="nav">
+                <li>
+                  <a href="#gr1">关键字(掌握) </a>
+                </li>
+                <li>
+                  <a href="#gr2">标识符(掌握)</a>
+                </li>
+                <li>
+                  <a href="#gr3">注释(掌握) </a>
+                </li>
+                <li>
+                  <a href="#gr4">常量(掌握) </a>
+                </li>
+                <li>
+                  <a href="#gr5">进制转换(了解) </a>
+                </li>
+                <li>
+                  <a href="#gr6">变量(掌握) </a>
+                </li>
+                <li>
+                  <a href="#gr7">数据类型(掌握) </a>
+                </li>
+                <li>
+                  <a href="#gr8">数据类型转换(掌握) </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+  <script src="../js/jquery.min.js"></script>
+  <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+  <script src="../js/bootstrap.min.js"></script> 
+
+</body>
+</html>
